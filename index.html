@@ -2,143 +2,163 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎯 KL Bolões - Sua chance de ganhar!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📋 Lista de Bolão - KL Bolões Lotinha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #190b36, #080420);
+      background: linear-gradient(to right, #5e2750, #2c1234);
+      color: #fff;
       margin: 0;
       padding: 0;
-      color: white;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-    }
-
-    .container {
-      background: linear-gradient(to bottom right, #2c165d, #1d0f3a);
-      border-radius: 20px;
-      padding: 2rem;
-      width: 90%;
-      max-width: 480px;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-      text-align: center;
-      border: 3px solid #ffd700;
+      background-image: url('https://img.freepik.com/fotos-premium/trevo-da-sorte-simbolo-da-loteria-fundo-3d-roxo_692702-3558.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     .logo {
-      width: 180px;
-      margin-bottom: 1rem;
+      margin-top: 20px;
+    }
+
+    .logo img {
+      width: 160px;
+    }
+
+    .card {
+      background: rgba(47, 47, 79, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      border: 2px solid #ffda77;
+      backdrop-filter: blur(10px);
     }
 
     h1 {
       font-size: 1.8rem;
-      color: #ffd700;
       margin-bottom: 1rem;
+      color: #ffd700;
     }
 
-    .price-box {
-      background: #311d6b;
-      border-radius: 15px;
+    .info {
+      background-color: #3d3d63;
       padding: 1rem;
+      border-radius: 12px;
       margin-bottom: 1.5rem;
-      box-shadow: inset 0 0 10px #ffd70066;
-    }
-
-    .price-box p {
-      margin: 0.5rem 0;
+      text-align: left;
+      color: #fff;
       font-size: 0.95rem;
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
     }
 
     label {
-      font-weight: 600;
-      margin-top: 1rem;
       display: block;
+      margin-top: 10px;
+      font-weight: 600;
       text-align: left;
     }
 
     input {
       width: 100%;
       padding: 10px;
-      margin-top: 0.3rem;
+      margin-top: 5px;
       border-radius: 8px;
       border: none;
-      background-color: #3a2a68;
+      outline: none;
+      background-color: #4a4a6a;
       color: #fff;
     }
 
     button {
-      background: linear-gradient(to right, #ffd700, #ff8c00);
-      border: none;
-      color: black;
-      font-weight: 800;
+      margin-top: 20px;
+      background: linear-gradient(to right, #ffd700, #ff9a00);
+      color: #000;
+      font-weight: 700;
       padding: 12px;
-      margin-top: 1.5rem;
+      border: none;
       border-radius: 10px;
       width: 100%;
-      font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0 5px 20px #ffdf4f;
-      transition: transform 0.2s;
+      transition: 0.3s;
     }
 
     button:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #ffda77;
     }
 
-    .whatsapp {
+    .whatsapp-link {
+      margin-top: 20px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 8px;
-      margin-top: 1rem;
+      justify-content: center;
       color: #25D366;
-      font-weight: bold;
       text-decoration: none;
+      font-weight: 600;
     }
 
-    .whatsapp img {
+    .whatsapp-link img {
       width: 24px;
+      margin-right: 8px;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #ccc;
+      font-size: 0.8rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_da_Lotof%C3%A1cil.png" alt="Lotofácil" class="logo" />
-    <h1>🎯 KL Bolões Lotinha</h1>
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_da_Lotof%C3%A1cil.png" alt="Logo Lotofácil">
+  </div>
 
-    <div class="price-box">
-      <p>💸 <strong>Cota Inteira:</strong> R$42,00</p>
-      <p>💸 <strong>Meia Cota:</strong> R$21,00</p>
-      <p>🎯 <strong>Prêmio estimado:</strong> R$50.000,00</p>
-      <p>🎁 <strong>Bônus:</strong> 30 bilhetes para sorteio de Volvo EX30 ou R$240 mil no Pix!</p>
-      <p>🕒 <strong>Pagamento até:</strong> 16h30</p>
-      <p>🏦 <strong>PIX (CPF):</strong> 117.795.189-43</p>
+  <div class="card">
+    <h1>💜 KL Bolões Lotinha 💜</h1>
+
+    <div class="info">
+      <p><strong>💰 Cota:</strong> R$42,00</p>
+      <p><strong>💰 Meia cota:</strong> R$21,00</p>
+      <p><strong>🎯 Prêmio por cota:</strong> R$1.440,00</p>
+      <p><strong>🎇 Estimativa de premiação:</strong> R$50.000,00</p>
+      <p><strong>🎁 Bônus:</strong> 30 bilhetes para concorrer ao Volvo EX30 ou R$240.000,00 no Pix</p>
+      <p><strong>🕓 Pagamento até:</strong> 16h30</p>
+      <p><strong>🏦 PIX (CPF):</strong> 11779518943</p>
     </div>
 
     <form action="https://script.google.com/macros/s/AKfycbwTm2PnI4nrrJTlZqD40d3Bs12rtdRewu1NE4Pl73pLP1H7ulNxhBFWp1BEmvYXyf2Z/exec" method="POST">
-      <label for="nome">👤 Nome completo:</label>
-      <input type="text" id="nome" name="nome" required />
+      <label for="nome">Seu nome:</label>
+      <input type="text" name="nome" id="nome" required>
 
-      <label for="cotas">🔢 Quantas cotas inteiras?</label>
-      <input type="number" id="cotas" name="cotas" min="0" step="1" required />
+      <label for="cotas">Quantas cotas inteiras?</label>
+      <input type="number" name="cotas" id="cotas" min="0" step="1" required>
 
-      <label for="meias">🧮 Quantas meias cotas?</label>
-      <input type="number" id="meias" name="meias" min="0" step="1" required />
+      <label for="meias">Quantas meias cotas?</label>
+      <input type="number" name="meias" id="meias" min="0" step="1" required>
 
       <button type="submit">✅ Confirmar inscrição</button>
     </form>
 
-    <a class="whatsapp" href="https://wa.me/5542999720729" target="_blank">
+    <a class="whatsapp-link" href="https://wa.me/5542999720729" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
       Enviar comprovante no WhatsApp
     </a>
   </div>
+
+  <footer>
+    © 2025 KL Bolões Lotinha - Todos os direitos reservados
+  </footer>
 </body>
 
 </html>
