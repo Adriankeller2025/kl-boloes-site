@@ -2,278 +2,163 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🎯 KL Bolões Lotinha - Inscrição Profissional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KL Bolões - Lotofácil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Reset e base */
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #2c1a4f, #503b9f);
-      color: #f9f6f2;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(145deg, #6e44ff, #9d4edd);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      overflow-x: hidden;
-      user-select: none;
     }
-    /* Container do card */
-    .card {
-      background: linear-gradient(145deg, #4a3291, #5a43bc);
-      border-radius: 28px;
-      box-shadow:
-        0 10px 30px rgba(90, 67, 188, 0.6),
-        inset 0 0 20px rgba(255, 223, 96, 0.3);
-      max-width: 480px;
-      width: 100%;
-      padding: 2.8rem 2.5rem;
+
+    header {
+      padding: 1rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-    /* Logo com animação sutil */
-    .logo {
+
+    header img {
       width: 100px;
-      margin: 0 auto 20px;
-      filter: drop-shadow(0 0 10px #ffd700);
-      animation: floatLogo 4s ease-in-out infinite;
-      user-select: none;
+      margin-bottom: 10px;
     }
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    /* Título */
+
     h1 {
-      font-weight: 700;
-      font-size: 2.3rem;
-      margin-bottom: 1.4rem;
-      color: #ffd700;
-      text-shadow:
-        0 0 10px #ffd700,
-        0 0 20px #e6c500;
-      user-select: text;
+      font-size: 2rem;
+      margin: 0;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
-    /* Informações do bolão */
-    .info {
-      background: #3e2a7d;
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
       border-radius: 20px;
-      padding: 1.6rem 1.8rem;
-      margin-bottom: 2.2rem;
-      box-shadow:
-        inset 0 0 16px rgba(255, 223, 96, 0.6),
-        0 0 30px rgba(255, 223, 96, 0.3);
-      font-weight: 600;
-      font-size: 1.05rem;
-      text-align: left;
-      color: #fff7d9;
-      line-height: 1.5;
-      user-select: text;
+      padding: 2rem;
+      margin: 2rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.2);
     }
+
     .info p {
-      margin: 10px 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
     }
-    .info p strong {
-      min-width: 150px;
-      color: #ffea7f;
-    }
-    .info p::before {
-      content: attr(data-icon);
-      font-size: 1.5rem;
-      user-select: none;
-    }
-    /* Formulário */
-    form {
-      text-align: left;
-    }
+
     label {
+      margin-top: 1rem;
       display: block;
-      font-weight: 700;
-      margin-top: 20px;
-      color: #ffea7f;
-      text-shadow: 0 0 6px #e6c500;
-      user-select: none;
-    }
-    input[type="text"],
-    input[type="number"] {
-      width: 100%;
-      padding: 14px 18px;
-      margin-top: 8px;
-      border-radius: 12px;
-      border: none;
       font-weight: 600;
-      font-size: 1.1rem;
-      color: #3c1a8b;
-      background: #ffe69d;
-      box-shadow:
-        inset 0 0 12px #d2b600,
-        0 0 18px #d2b600;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: text;
     }
-    input::placeholder {
-      color: #a38600;
-      font-weight: 500;
-    }
-    input:focus {
-      outline: none;
-      background-color: #fff5b1;
-      color: #432f00;
-      box-shadow:
-        inset 0 0 16px #ffd700,
-        0 0 25px #ffd700;
-    }
-    /* Botão */
-    button {
-      margin-top: 30px;
+
+    input {
       width: 100%;
-      padding: 16px 0;
-      border-radius: 28px;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 10px;
       border: none;
-      font-weight: 900;
-      font-size: 1.3rem;
-      color: #3c1a8b;
-      background: linear-gradient(90deg, #ffdd57, #ffcc00, #ffdd57);
-      box-shadow:
-        0 0 25px #ffdd57,
-        inset 0 0 20px #d4af37;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: #eee;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #fca311, #ffba08);
+      color: #000;
+      border: none;
+      font-weight: bold;
+      border-radius: 10px;
       cursor: pointer;
-      user-select: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-shadow: 0 0 4px #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
-    button:hover,
-    button:focus {
-      transform: scale(1.08);
-      box-shadow:
-        0 0 45px #ffea70,
-        inset 0 0 30px #ffd42b;
+
+    button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 12px #ffdd57;
     }
-    /* Link whatsapp */
+
     .whatsapp-link {
+      margin-top: 1rem;
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 14px;
-      margin-top: 28px;
-      color: #25d366;
-      font-weight: 700;
-      font-size: 1.2rem;
+      justify-content: center;
       text-decoration: none;
-      filter: drop-shadow(0 0 8px #25d366);
-      user-select: none;
-      transition: filter 0.3s ease;
+      color: #25D366;
+      font-weight: bold;
     }
-    .whatsapp-link:hover,
-    .whatsapp-link:focus {
-      filter: drop-shadow(0 0 20px #25d366);
-    }
+
     .whatsapp-link img {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      margin-right: 10px;
     }
-    /* Rodapé */
+
     footer {
-      margin-top: 38px;
-      font-size: 0.9rem;
-      color: #d4af3788;
       text-align: center;
-      user-select: none;
-      text-shadow: 0 0 10px #d4af37;
-    }
-    /* Responsividade */
-    @media (max-width: 520px) {
-      .card {
-        padding: 2rem 1.6rem;
-      }
-      h1 {
-        font-size: 1.9rem;
-      }
-      .info p {
-        font-size: 0.95rem;
-      }
-      input[type="text"],
-      input[type="number"] {
-        font-size: 1rem;
-      }
-      button {
-        font-size: 1.1rem;
-      }
-      .whatsapp-link {
-        font-size: 1rem;
-      }
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #ccc;
     }
   </style>
 </head>
 
 <body>
-  <main class="card" role="main" aria-label="Formulário de inscrição do bolão KL Bolões Lotinha">
-    <img
-      class="logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_da_Lotof%C3%A1cil.png"
-      alt="Logo Lotofácil"
-      aria-hidden="true"
-      draggable="false"
-    />
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_da_Lotof%C3%A1cil.png" alt="Lotofácil">
+    <h1>KL Bolões - Lotofácil 💜</h1>
+  </header>
 
-    <h1>🎯 KL Bolões Lotinha</h1>
+  <div class="card">
+    <div class="info">
+      <p><strong>🎟 Cota:</strong> R$42,00</p>
+      <p><strong>🎟 Meia cota:</strong> R$21,00</p>
+      <p><strong>💵 Prêmio por cota:</strong> R$1.440,00</p>
+      <p><strong>💰 Estimativa total:</strong> R$50.000,00</p>
+      <p><strong>🎁 Promoção:</strong> 30 bilhetes concorrem a um Volvo EX30 ou R$240.000 no Pix</p>
+      <p><strong>📅 Pagamento até:</strong> 16h30</p>
+      <p><strong>🔢 PIX CPF:</strong> 11779518943</p>
+    </div>
 
-    <section class="info" aria-live="polite" aria-label="Informações do bolão">
-      <p data-icon="💰"><strong>Cota:</strong> R$42,00</p>
-      <p data-icon="💰"><strong>Meia cota:</strong> R$21,00</p>
-      <p data-icon="🎯"><strong>Prêmio por cota:</strong> R$1.440,00</p>
-      <p data-icon="🎇"><strong>Estimativa total:</strong> R$50.000,00</p>
-      <p data-icon="🎁"><strong>Bônus:</strong> 30 bilhetes para concorrer ao Volvo EX30 ou R$240.000,00 no Pix</p>
-      <p data-icon="🕓"><strong>Pagamento até:</strong> 16h30</p>
-      <p data-icon="🏦"><strong>PIX (CPF):</strong> 11779518943</p>
-    </section>
+    <form action="https://script.google.com/macros/s/AKfycbwTm2PnI4nrrJTlZqD40d3Bs12rtdRewu1NE4Pl73pLP1H7ulNxhBFWp1BEmvYXyf2Z/exec" method="POST">
+      <label for="nome">👤 Nome completo</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-    <form action="https://script.google.com/macros/s/AKfycbwTm2PnI4nrrJTlZqD40d3Bs12rtdRewu1NE4Pl73pLP1H7ulNxhBFWp1BEmvYXyf2Z/exec" method="POST" aria-label="Formulário de inscrição">
-      <label for="nome">Nome completo:</label>
-      <input
-        type="text"
-        id="nome"
-        name="nome"
-        required
-        autocomplete="name"
-        placeholder="Digite seu nome completo"
-        spellcheck="false"
-        autocapitalize="words"
-      />
+      <label for="cotas">🟣 Qtde de cotas inteiras</label>
+      <input type="number" id="cotas" name="cotas" min="0" step="1" placeholder="Ex: 1 ou mais" required>
 
-      <label for="cotas">Quantas cotas inteiras?</label>
-      <input type="number" id="cotas" name="cotas" min="0" step="1" required placeholder="Ex: 2" />
+      <label for="meias">🟣 Qtde de meias cotas</label>
+      <input type="number" id="meias" name="meias" min="0" step="1" placeholder="Ex: 1 ou mais" required>
 
-      <label for="meias">Quantas meias cotas?</label>
-      <input type="number" id="meias" name="meias" min="0" step="1" required placeholder="Ex: 1" />
-
-      <button type="submit" aria-label="Confirmar inscrição no bolão KL Bolões Lotinha">✅ Confirmar inscrição</button>
+      <button type="submit">✅ Confirmar minha inscrição</button>
     </form>
 
-    <a
-      class="whatsapp-link"
-      href="https://wa.me/5542999720729"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Enviar comprovante no WhatsApp"
-    >
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Ícone WhatsApp" draggable="false" />
+    <a class="whatsapp-link" href="https://wa.me/5542999720729" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       Enviar comprovante no WhatsApp
     </a>
-  </main>
+  </div>
 
-  <footer aria-label="Rodapé">
-    © 2025 KL Bolões Lotinha - Todos os direitos reservados
+  <footer>
+    © 2025 KL Bolões • Todos os direitos reservados.
   </footer>
 </body>
 
