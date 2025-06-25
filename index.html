@@ -1,102 +1,154 @@
-<!-- KL Bolões Lotinha - Site Profissional Integrado ao Google Sheets -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💜 KL Bolões Lotinha 💜</title>
+  <title>K.L Bolões - Lotinha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* (CSS copiado da versão anterior com layout moderno, neon e responsivo) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      background: #fff;
+      color: #333;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .info {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-align: left;
+    }
+    .info p {
+      margin: 0.4rem 0;
+    }
+    label, input, select {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    input, select {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: #2b5876;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #1a3d50;
+    }
+    .whatsapp {
+      margin-top: 2rem;
+    }
+    .whatsapp a {
+      color: #25d366;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>💜 KL Bolões Lotinha 💜</h1>
-    <p>Reserve sua cota e boa sorte! 🍀</p>
-  </header>
+  <div class="container">
+    <h1>💜 KL BOLÕES - LOTINHA 20 DZ 💜</h1>
+    <div class="info">
+      <p><strong>💰 Cota Inteira:</strong> R$42,00</p>
+      <p><strong>💰 Meia Cota:</strong> R$21,00</p>
+      <p><strong>🎯 Prêmio por Cota:</strong> R$1.440,00</p>
+      <p><strong>🎇 Estimativa Total:</strong> R$50.000,00</p>
+      <p><strong>🎁 Bônus:</strong> Cada cota dá 30 chances para concorrer a um Volvo EX30 ou R$240.000,00 no PIX!</p>
+      <p><strong>⌚ Pagamento até:</strong> 16:30</p>
+      <p><strong>🏦 PIX (CPF):</strong> 11779518943</p>
+    </div>
 
-  <form id="bolaoForm">
-    <label for="nome">Seu nome completo:</label>
-    <input type="text" id="nome" name="nome" placeholder="Ex: Adriano Keller" required minlength="3" />
+    <form id="formulario">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required>
 
-    <label for="cotas">Cotas inteiras (R$42,00 cada):</label>
-    <input type="number" id="cotas" name="cotas" min="0" value="0" required />
+      <label for="cotas">Quantidade de cotas inteiras:</label>
+      <select id="cotas" name="cotas">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
 
-    <label for="meiacota">Meias cotas (R$21,00 cada):</label>
-    <input type="number" id="meiacota" name="meiacota" min="0" value="0" required />
+      <label for="meiacota">Quantidade de meias cotas:</label>
+      <select id="meiacota" name="meiacota">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
 
-    <button type="submit">Reservar minha Cota 🎟️</button>
-  </form>
+      <button type="submit">✅ Confirmar inscrição</button>
+    </form>
 
-  <div class="info-box">
-    <strong>💜 LOTINHA 20 DZ 💜</strong>
-    <p>💰 Cota: <code>R$42,00</code> inteira ou <code>R$21,00</code> meia</p>
-    <p>📅 Sorteio: Quarta e Sábado</p>
-    <p>🚀 Confirmamos via WhatsApp após preenchimento</p>
-    <a href="https://wa.me/553499356819" target="_blank">Falar com o responsável</a>
+    <div class="whatsapp">
+      <p>📩 Após o pagamento, envie seu comprovante no nosso WhatsApp:</p>
+      <a href="https://wa.me/5542999720729" target="_blank">📲 Clique aqui para enviar</a>
+    </div>
+
+    <div class="footer">
+      © 2025 KL Bolões. Todos os direitos reservados.
+    </div>
   </div>
 
   <script>
-    document.getElementById("bolaoForm").addEventListener("submit", async function (event) {
-      event.preventDefault();
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwTm2PnI4nrrJTlZqD40d3Bs12rtdRewu1NE4Pl73pLP1H7ulNxhBFWp1BEmvYXyf2Z/exec';
 
-      const nome = document.getElementById("nome").value.trim();
-      const cotas = document.getElementById("cotas").value.trim();
-      const meiacota = document.getElementById("meiacota").value.trim();
+    document.getElementById('formulario').addEventListener('submit', e => {
+      e.preventDefault();
 
-      const url = "https://script.google.com/macros/s/AKfycbwTm2PnI4nrrJTlZqD40d3Bs12rtdRewu1NE4Pl73pLP1H7ulNxhBFWp1BEmvYXyf2Z/exec";
+      const nome = document.getElementById('nome').value;
+      const cotas = document.getElementById('cotas').value;
+      const meiacota = document.getElementById('meiacota').value;
 
-      try {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: `nome=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cotas)}&meiacota=${encodeURIComponent(meiacota)}`
-        });
-
-        const result = await res.json();
-
-        if (result.result === "ok") {
-          alert("Cota reservada com sucesso! Entraremos em contato pelo WhatsApp.");
-          document.getElementById("bolaoForm").reset();
-        } else {
-          alert("Erro ao enviar: " + result.message);
-        }
-      } catch (error) {
-        alert("Erro ao conectar com o servidor.");
-        console.error(error);
-      }
+      fetch(scriptURL + `?nome=${encodeURIComponent(nome)}&cotas=${cotas}&meiacota=${meiacota}`)
+        .then(response => {
+          alert("✅ Inscrição enviada com sucesso! Boa sorte! 🍀");
+          document.getElementById('formulario').reset();
+        })
+        .catch(error => alert("❌ Erro ao enviar. Tente novamente."));
     });
   </script>
 </body>
 </html>
-
-/* Google Apps Script para planilha "listakl" */
-
-function doPost(e) {
-  try {
-    const ss = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = ss.getSheetByName("listakl");
-    if (!sheet) return ContentService.createTextOutput("Erro: Aba 'listakl' não encontrada.");
-
-    const nome = e.parameter.nome || "";
-    const cotas = e.parameter.cotas || "0";
-    const meiacota = e.parameter.meiacota || "0";
-
-    const cotasInt = parseInt(cotas, 10) || 0;
-    const meiacotaInt = parseInt(meiacota, 10) || 0;
-
-    sheet.appendRow([new Date(), nome.trim(), cotasInt, meiacotaInt]);
-
-    return ContentService.createTextOutput(JSON.stringify({ result: "ok" }))
-      .setMimeType(ContentService.MimeType.JSON)
-      .setHeader("Access-Control-Allow-Origin", "*");
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ result: "error", message: err.message }))
-      .setMimeType(ContentService.MimeType.JSON)
-      .setHeader("Access-Control-Allow-Origin", "*");
-  }
-}
-
-function doGet(e) {
-  return HtmlService.createHtmlOutput("Acesso não permitido");
-}
