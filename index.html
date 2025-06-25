@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KL Bolões Lotinha 💜</title>
   <style>
     body {
@@ -125,7 +125,7 @@
         alert("✅ Reserva enviada com sucesso!\nEnvie o comprovante no WhatsApp.");
         window.open("https://wa.me/5542999720729", "_blank");
         form.reset();
-      }).catch(err => {
+      }).catch(() => {
         alert("❌ Erro ao enviar. Tente novamente.");
       });
     });
