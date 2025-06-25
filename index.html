@@ -6,19 +6,19 @@
   <title>KL Bolões Lotinha 💜</title>
   <style>
     body {
-      background: linear-gradient(180deg, #1a0033, #000000);
+      background: linear-gradient(to bottom, #1a0033, #000000);
       color: white;
       font-family: 'Arial', sans-serif;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
     }
     .form-box {
       background: #2a0050;
       border-radius: 16px;
       padding: 2rem;
-      width: 90%;
+      width: 100%;
       max-width: 450px;
       box-shadow: 0 0 20px #bb00ff;
       margin-bottom: 2rem;
@@ -60,7 +60,7 @@
       border-radius: 14px;
       padding: 1.5rem;
       font-size: 0.95rem;
-      width: 90%;
+      width: 100%;
       max-width: 480px;
       text-align: center;
     }
@@ -83,8 +83,8 @@
       <label for="cotas">Cotas inteiras (R$42):</label>
       <input type="number" id="cotas" name="cotas" min="0" value="0" required />
 
-      <label for="meiaCota">Meias cotas (R$21):</label>
-      <input type="number" id="meiaCota" name="meiaCota" min="0" value="0" required />
+      <label for="meiacota">Meias cotas (R$21):</label>
+      <input type="number" id="meiacota" name="meiacota" min="0" value="0" required />
 
       <button type="submit">Reservar 🎟️</button>
     </form>
@@ -110,19 +110,23 @@
       e.preventDefault();
       const nome = document.getElementById("nome").value;
       const cotas = document.getElementById("cotas").value;
-      const meiaCota = document.getElementById("meiaCota").value;
+      const meiacota = document.getElementById("meiacota").value;
 
       const url = "https://script.google.com/macros/s/AKfycbxMAMWxSZA2sABNIkwRBDNHKmiSdYqKIdDzVpSkjma4v6X9wWNbmJeoObMlaptkUsG-/exec";
 
       fetch(url, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `nome=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cotas)}&meiacota=${encodeURIComponent(meiaCota)}`
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `nome=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cotas)}&meiacota=${encodeURIComponent(meiacota)}`
       }).then(() => {
         alert("✅ Reserva enviada com sucesso!\nEnvie o comprovante no WhatsApp.");
         window.open("https://wa.me/5542999720729", "_blank");
         form.reset();
+      }).catch(err => {
+        alert("❌ Erro ao enviar. Tente novamente.");
       });
     });
   </script>
