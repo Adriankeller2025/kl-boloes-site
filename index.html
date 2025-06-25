@@ -6,4 +6,125 @@
   <title>KL Bolões Lotinha 💜</title>
   <style>
     body {
-      background: linear-gradient(18
+      background: linear-gradient(180deg, #1a0033, #000000);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .form-box {
+      background: #2a0050;
+      border-radius: 16px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 0 20px #bb00ff;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #ffccff;
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.3rem;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    button {
+      background: #9f00ff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #b84dff;
+    }
+    .info {
+      background: #140026;
+      border: 1px solid #9f00ff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      font-size: 0.95rem;
+      width: 90%;
+      max-width: 480px;
+      text-align: center;
+    }
+    .info strong {
+      color: #80ffd4;
+    }
+    a {
+      color: #80dfff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h1>💜 KL Bolões Lotinha 💜</h1>
+    <form id="bolaoForm">
+      <label for="nome">Seu nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Ex: Ana Souza" required />
+
+      <label for="cotas">Cotas inteiras (R$42):</label>
+      <input type="number" id="cotas" name="cotas" min="0" value="0" required />
+
+      <label for="meiaCota">Meias cotas (R$21):</label>
+      <input type="number" id="meiaCota" name="meiaCota" min="0" value="0" required />
+
+      <button type="submit">Reservar 🎟️</button>
+    </form>
+  </div>
+
+  <div class="info">
+    💜 <strong>LOTINHA 20 DZ</strong><br/><br/>
+    💰 <strong>Cota:</strong> R$42,00<br/>
+    💰 <strong>Meia Cota:</strong> R$21,00<br/>
+    🥳 <strong>Prêmio por Cota:</strong> R$1.440,00<br/>
+    ☘️ 6 premiadas 100% garantido<br/>
+    🎇 Estimativa total: R$50.000,00<br/>
+    ⚠️ Cada cota ganha <strong>30 bilhetes</strong> para concorrer ao EX30 elétrico ou R$240.000,00 no PIX<br/><br/>
+    🕒 <strong>Pagamento até:</strong> 16:30<br/>
+    🏦 <strong>PIX (Caixa - CPF):</strong> <code>11779518943</code><br/><br/>
+    📲 Após pagamento, envie o comprovante no WhatsApp:<br/>
+    👉 <a href="https://wa.me/5542999720729" target="_blank">Clique aqui para enviar comprovante</a>
+  </div>
+
+  <script>
+    const form = document.getElementById("bolaoForm");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const cotas = document.getElementById("cotas").value;
+      const meiaCota = document.getElementById("meiaCota").value;
+
+      const url = "https://script.google.com/macros/s/AKfycbxMAMWxSZA2sABNIkwRBDNHKmiSdYqKIdDzVpSkjma4v6X9wWNbmJeoObMlaptkUsG-/exec";
+
+      fetch(url, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `nome=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cotas)}&meiacota=${encodeURIComponent(meiaCota)}`
+      }).then(() => {
+        alert("✅ Reserva enviada com sucesso!\nEnvie o comprovante no WhatsApp.");
+        window.open("https://wa.me/5542999720729", "_blank");
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>
