@@ -117,7 +117,17 @@
       form.style.display = 'none';
       thankYouMsg.style.display = 'block';
 
-      // Aqui depois a gente conecta com o Apps Script para salvar os dados
+    fetch(https://script.google.com/macros/s/AKfycbwAaBKE4Zv6ia9TLBnb2HQCsWaTHf4-Fo_6szD4qAJBrvaKkPGAo11XACIH2cSNUsE/exec
+  method: "POST",
+  body: JSON.stringify({
+    nome: document.getElementById('nome').value,
+    cotas: document.getElementById('cotas').value
+  }),
+  headers: {
+    "Content-Type": "application/json"
+  }
+});
+
     });
   </script>
 </body>
