@@ -19,7 +19,7 @@
       border-radius: 15px;
       padding: 2rem;
       width: 90%;
-      max-width: 400px;
+      max-width: 420px;
       box-shadow: 0 0 25px #8b00ff;
     }
     h1 {
@@ -73,10 +73,13 @@
       <label for="nome">Seu nome:</label>
       <input type="text" id="nome" name="nome" required />
 
-      <label for="cotas">Quantidade de cotas:</label>
-      <input type="number" id="cotas" name="cotas" min="1" required />
+      <label for="cotas">Cotas inteiras (R$42):</label>
+      <input type="number" id="cotas" name="cotas" min="0" value="0" required />
 
-      <button type="submit">Reservar Cota 🎟️</button>
+      <label for="meiaCota">Meias cotas (R$21):</label>
+      <input type="number" id="meiaCota" name="meiaCota" min="0" value="0" required />
+
+      <button type="submit">Reservar 🎟️</button>
     </form>
   </div>
 
@@ -99,6 +102,7 @@
       e.preventDefault();
       const nome = document.getElementById("nome").value;
       const cotas = document.getElementById("cotas").value;
+      const meiaCota = document.getElementById("meiaCota").value;
 
       const url = "https://script.google.com/macros/s/AKfycbxMAMWxSZA2sABNIkwRBDNHKmiSdYqKIdDzVpSkjma4v6X9wWNbmJeoObMlaptkUsG-/exec";
 
@@ -106,9 +110,9 @@
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `nome=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cotas)}`
+        body: `nome=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cotas)}&meiacota=${encodeURIComponent(meiaCota)}`
       }).then(() => {
-        alert("✅ Sua cota foi reservada com sucesso!\nEnvie o comprovante no WhatsApp.");
+        alert("✅ Reserva feita! Envie o comprovante no WhatsApp.");
         window.open("https://wa.me/5542999720729", "_blank");
         form.reset();
       });
