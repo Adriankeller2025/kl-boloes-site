@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K.L Bolões Lotinha</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #8e44ad, #9b59b6);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      color: #333;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #8e44ad;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      background-color: #8e44ad;
+      border: none;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #732d91;
+    }
+    .whatsapp-link {
+      margin-top: 15px;
+      display: block;
+      background-color: #25D366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .thank-you {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💜 K.L Bolões Lotinha 💜</h1>
+    <p><strong>Cota:</strong> R$42,00</p>
+    <p><strong>Meia cota:</strong> R$21,00</p>
+    <p><strong>Prêmio por cota:</strong> R$1.440,00</p>
+    <p>6 premiadas 100%</p>
+    <p><strong>Estimativa:</strong> R$50.000,00</p>
+    <p>A cada 1 cota comprada ganha 30 bilhetes para concorrer ao Ex30 elétrica ou R$240.000,00 no Pix</p>
+    <p><strong>Pagamento até:</strong> 16:30</p>
+    <p><strong>PIX CAIXA (CPF):</strong> 117.795.189-43</p>
+
+    <form id="bolaoForm">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" required />
+
+      <label for="cotas">Quantidade de cotas</label>
+      <input type="number" id="cotas" min="1" required />
+
+      <button type="submit">Enviar inscrição</button>
+    </form>
+
+    <a class="whatsapp-link" href="https://wa.me/5542999720729" target="_blank">
+      Enviar comprovante no WhatsApp
+    </a>
+
+    <div class="thank-you" id="thankYouMsg">
+      Obrigado por participar! Boa sorte com sua cota! 🎉
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('bolaoForm');
+    const thankYouMsg = document.getElementById('thankYouMsg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      thankYouMsg.style.display = 'block';
+
+      // Aqui depois a gente conecta com o Apps Script para salvar os dados
+    });
+  </script>
+</body>
+</html>
