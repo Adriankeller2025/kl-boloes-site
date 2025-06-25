@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #4b0082, #800080);
+      background: linear-gradient(to right, #1e1e2f, #2c2c54);
       color: #fff;
       margin: 0;
       padding: 0;
@@ -21,34 +21,24 @@
     }
 
     .card {
-      background: #2d044d;
-      border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-      padding: 2.5rem;
-      max-width: 520px;
+      background: #2f2f4f;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      max-width: 500px;
       width: 100%;
       text-align: center;
-      border: 2px solid #ffd700;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .card:hover {
-      transform: scale(1.01);
+      border: 2px solid #ffda77;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
       color: #ffd700;
     }
 
-    .logo {
-      width: 120px;
-      margin-bottom: 1rem;
-    }
-
     .info {
-      background-color: #3b0a6d;
+      background-color: #3d3d63;
       padding: 1rem;
       border-radius: 12px;
       margin-bottom: 1.5rem;
@@ -60,9 +50,8 @@
 
     label {
       display: block;
-      margin-top: 12px;
+      margin-top: 10px;
       font-weight: 600;
-      text-align: left;
     }
 
     input {
@@ -72,22 +61,21 @@
       border-radius: 8px;
       border: none;
       outline: none;
-      background-color: #4a256b;
+      background-color: #4a4a6a;
       color: #fff;
     }
 
     button {
       margin-top: 20px;
-      background: linear-gradient(to right, #ffd700, #ff8c00);
+      background: linear-gradient(to right, #ffd700, #ff9a00);
       color: #000;
       font-weight: 700;
-      padding: 14px;
+      padding: 12px;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       width: 100%;
       cursor: pointer;
       transition: 0.3s;
-      font-size: 1rem;
     }
 
     button:hover {
@@ -109,12 +97,21 @@
       width: 24px;
       margin-right: 8px;
     }
+
+    #mensagem {
+      margin-top: 20px;
+      background: #4CAF50;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+      font-weight: 600;
+      color: #fff;
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_da_Lotof%C3%A1cil.png" alt="Lotofácil Logo">
     <h1>💜 KL Bolões Lotinha 💜</h1>
 
     <div class="info">
@@ -127,24 +124,43 @@
       <p><strong>🏦 PIX (CPF):</strong> 11779518943</p>
     </div>
 
-    <form action="https://script.google.com/macros/s/AKfycbwS0qSY4CuWd_eTgKPCY53pUFmLNtNhsQcQcOlpvf1SbaZVtQYmxNfTcCvNUbQLoKZZ3Q/exec" method="POST">
+    <form id="formulario" action="https://script.google.com/macros/s/AKfycbwS0qSY4CuWd_eTgKPCY53pUFmLNtNhsQcQcOlpvf1SbaZVtQYmxNfTcCvNUbQLoKZZ3Q/exec" method="POST">
       <label for="nome">Seu nome:</label>
       <input type="text" name="nome" id="nome" required>
 
       <label for="cotas">Quantas cotas inteiras?</label>
-      <input type="number" name="cotas" id="cotas" min="0" step="1" required>
+      <input type="number" name="cotas" id="cotas" min="0" step="1">
 
       <label for="meias">Quantas meias cotas?</label>
-      <input type="number" name="meias" id="meias" min="0" step="1" required>
+      <input type="number" name="meias" id="meias" min="0" step="1">
 
       <button type="submit">✅ Confirmar inscrição</button>
     </form>
+
+    <div id="mensagem">✅ Obrigado por comprar sua cota! Boa sorte nos jogos da Lotofácil! 🍀</div>
 
     <a class="whatsapp-link" href="https://wa.me/5542999720729" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
       Enviar comprovante no WhatsApp
     </a>
   </div>
+
+  <script>
+    document.getElementById("formulario").addEventListener("submit", function (e) {
+      const cotas = document.getElementById("cotas").value;
+      const meias = document.getElementById("meias").value;
+
+      if ((cotas === "" || cotas === "0") && (meias === "" || meias === "0")) {
+        e.preventDefault();
+        alert("Você precisa escolher pelo menos uma cota ou meia cota!");
+      } else {
+        const msg = document.getElementById("mensagem");
+        setTimeout(() => {
+          msg.style.display = 'block';
+        }, 500);
+      }
+    });
+  </script>
 </body>
 
 </html>
