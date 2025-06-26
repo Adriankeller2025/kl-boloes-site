@@ -156,8 +156,8 @@
         return;
       }
 
-      // Envia para sua URL do script Apps Script
-      fetch("https://script.google.com/macros/s/AKfycbwzrHRZeXE3Q4A04vX-qL_GxKDLfRxFBYB9A7r7C_2R/dev", {
+      // Enviar para o Google Apps Script
+      fetch("https://script.google.com/macros/s/AKfycbwslCZCUnyBN45XmJF1nTmnb635p5D771PVnTj_nrbObb0eG1zIYWs1xnuFtx-GdyVduw/exec", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `participante=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cota)}&horario=${encodeURIComponent(horario)}`
@@ -172,7 +172,7 @@
         }
       })
       .catch(() => {
-        alert("❌ Falha na conexão. Verifique sua internet.");
+        alert("❌ Falha na conexão. Verifique a internet.");
       });
     });
   </script>
