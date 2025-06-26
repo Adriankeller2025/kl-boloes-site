@@ -53,10 +53,10 @@
       margin-top: 10px;
       font-weight: 600;
       cursor: pointer;
+      font-size: 1rem;
     }
 
-    input[type="text"],
-    input[type="number"] {
+    input[type="text"] {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -68,10 +68,23 @@
       font-size: 1rem;
     }
 
-    input[type="checkbox"] {
+    .radio-group {
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .radio-group label {
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 12px;
       transform: scale(1.3);
-      margin-right: 8px;
-      vertical-align: middle;
       cursor: pointer;
     }
 
@@ -118,6 +131,7 @@
       display: none;
       font-weight: 600;
       color: #fff;
+      text-align: center;
     }
   </style>
 </head>
@@ -140,15 +154,15 @@
       <label for="nome">Seu nome:</label>
       <input type="text" name="participante" id="nome" required />
 
-      <label for="cotas">Quantas cotas inteiras? (deixe 0 se for meia cota)</label>
-      <input type="number" name="cotas" id="cotas" min="0" step="1" value="0" />
+      <p><strong>Escolha a quantidade de cotas:</strong></p>
+      <div class="radio-group">
+        <label><input type="radio" name="cotas" value="MEIA" /> Meia cota (R$22,00) - máximo 1</label>
+        <label><input type="radio" name="cotas" value="1" /> 1 cota inteira (R$44,00)</label>
+        <label><input type="radio" name="cotas" value="2" /> 2 cotas inteiras (R$88,00)</label>
+        <label><input type="radio" name="cotas" value="3" /> 3 cotas inteiras (R$132,00)</label>
+        <!-- Você pode adicionar mais opções aqui -->
+      </div>
 
-      <label>
-        <input type="checkbox" name="meiaCota" id="meiaCota" value="1" />
-        Comprar 1 Meia Cota (R$22,00)
-      </label>
-
-      <!-- campo oculto para enviar horário -->
       <input type="hidden" name="horario" id="horario" />
 
       <button type="submit">✅ Confirmar inscrição</button>
@@ -163,53 +177,17 @@
   </div>
 
   <script>
-    const cotasInput = document.getElementById('cotas');
-    const meiaInput = document.getElementById('meiaCota');
     const form = document.getElementById('formulario');
     const horarioInput = document.getElementById('horario');
-    const msg = document.getElementById('mensagem');
-
-    // Controla bloqueio entre meia cota e cotas inteiras
-    meiaInput.addEventListener('change', () => {
-      if (meiaInput.checked) {
-        cotasInput.value = 0;
-        cotasInput.disabled = true;
-      } else {
-        cotasInput.disabled = false;
-      }
-    });
-
-    cotasInput.addEventListener('input', () => {
-      if (parseInt(cotasInput.value) > 0) {
-        meiaInput.checked = false;
-        meiaInput.disabled = true;
-      } else {
-        meiaInput.disabled = false;
-      }
-    });
+    const mensagem = document.getElementById('mensagem');
 
     form.addEventListener('submit', (e) => {
-      const cotas = parseInt(cotasInput.value);
-      const meia = meiaInput.checked;
+      const selecionado = form.querySelector('input[name="cotas"]:checked');
 
-      // Validação
-      if (cotas === 0 && !meia) {
+      if (!selecionado) {
         e.preventDefault();
-        alert('Você precisa escolher pelo menos uma cota inteira ou meia cota!');
+        alert('Por favor, selecione a quantidade de cotas (meia cota ou cotas inteiras).');
         return;
-      }
-
-      if (cotas > 0 && meia) {
-        e.preventDefault();
-        alert('Você só pode escolher meia cota OU cotas inteiras, não ambos.');
-        return;
-      }
-
-      // Ajusta valor de cotas para enviar "MEIA" ou número
-      if (meia) {
-        cotasInput.value = 'MEIA';
-      } else {
-        cotasInput.value = cotas.toString();
       }
 
       // Adiciona horário atual no formato HH:mm
@@ -218,12 +196,10 @@
       const m = now.getMinutes().toString().padStart(2, '0');
       horarioInput.value = `${h}:${m}`;
 
-      // Exibe mensagem de sucesso após 0.5s (opcional)
+      // Mostrar mensagem de sucesso após meio segundo (opcional)
       setTimeout(() => {
-        msg.style.display = 'block';
+        mensagem.style.display = 'block';
       }, 500);
-
-      // O formulário continua e envia para a planilha normalmente
     });
   </script>
 </body>
