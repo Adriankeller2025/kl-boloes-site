@@ -1,179 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>📋 Lista de Bolão - K.L LOTINHA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📋 Lista de Bolão - KL Bolões Lotofácil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(145deg, #2e003e, #1b002c);
+      background: linear-gradient(135deg, #4b0082, #800080);
       color: #fff;
       margin: 0;
-      padding: 0;
+      padding: 2rem;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
     }
 
     .card {
-      background: #3c0060;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      background: #2e003e;
       padding: 2rem;
-      max-width: 480px;
-      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 400px;
+      width: 100%;
       text-align: center;
-      border: 2px solid #ffb3ff;
+      border: 2px solid #ffda77;
     }
 
     h1 {
-      font-size: 1.8rem;
-      color: #ffb3ff;
+      color: #ffccff;
       margin-bottom: 1rem;
-    }
-
-    .info {
-      background-color: #5a007e;
-      padding: 1rem;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
-      text-align: left;
     }
 
     label {
       display: block;
-      text-align: left;
-      margin-top: 10px;
+      margin: 1rem 0 0.4rem;
       font-weight: 600;
     }
 
     input, select {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
-      outline: none;
-      background-color: #6e00a3;
+      background: #3b1a57;
       color: #fff;
+      font-size: 1rem;
     }
 
     button {
-      margin-top: 20px;
-      background: linear-gradient(to right, #ffb3ff, #c100e3);
-      color: #000;
-      font-weight: 700;
+      margin-top: 1.5rem;
+      width: 100%;
       padding: 12px;
+      background: linear-gradient(to right, #ffd700, #ff9a00);
+      color: #000;
+      font-weight: bold;
       border: none;
       border-radius: 10px;
-      width: 100%;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     button:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 15px #ffb3ff;
-    }
-
-    .whatsapp-link {
-      margin-top: 20px;
-      color: #25D366;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .whatsapp-link img {
-      width: 24px;
-      margin-right: 8px;
+      box-shadow: 0 0 15px #ffda77;
     }
 
     #mensagem {
-      margin-top: 20px;
-      background: #4CAF50;
-      padding: 15px;
+      margin-top: 1rem;
+      font-weight: bold;
+      padding: 10px;
       border-radius: 10px;
       display: none;
-      font-weight: 600;
-      color: #fff;
+    }
+
+    #mensagem.sucesso {
+      background: #4CAF50;
+    }
+
+    #mensagem.erro {
+      background: #e53935;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>🟣 K.L LOTINHA - Bolão Lotofácil</h1>
-
-    <div class="info">
-      <p><strong>💰 Cota Inteira:</strong> R$44,00</p>
-      <p><strong>💰 Meia Cota:</strong> R$22,00 (somente 1 por pessoa)</p>
-      <p><strong>🎁 Bônus:</strong> 30 bilhetes para concorrer ao Volvo EX30 ou R$240.000 no Pix</p>
-      <p><strong>🕓 Pagamento até:</strong> 16h30</p>
-      <p><strong>🏦 PIX:</strong> 11779518943</p>
-    </div>
-
+    <h1>💜 KL LOTINHA - Lotofácil 💜</h1>
     <form id="formulario">
       <label for="nome">Seu nome:</label>
-      <input type="text" id="nome" required>
+      <input type="text" id="nome" name="nome" required>
 
-      <label for="cota">Escolha sua opção:</label>
-      <select id="cota" required>
+      <label for="tipoCota">Escolha a cota:</label>
+      <select id="tipoCota" name="tipoCota" required>
         <option value="">Selecione</option>
-        <option value="meia">Meia Cota (1x)</option>
-        <option value="1">1 Cota Inteira</option>
-        <option value="2">2 Cotas Inteiras</option>
-        <option value="3">3 Cotas Inteiras</option>
+        <option value="meia">Meia Cota (R$22,00)</option>
+        <option value="1">1 Cota Inteira (R$44,00)</option>
+        <option value="2">2 Cotas Inteiras (R$88,00)</option>
+        <option value="3">3 Cotas Inteiras (R$132,00)</option>
       </select>
 
       <button type="submit">✅ Confirmar inscrição</button>
     </form>
 
-    <div id="mensagem">✅ Inscrição registrada com sucesso! Boa sorte na Lotofácil! 🍀</div>
-
-    <a class="whatsapp-link" href="https://wa.me/5542999720729" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-      Enviar comprovante no WhatsApp
-    </a>
+    <div id="mensagem"></div>
   </div>
 
   <script>
-    document.getElementById("formulario").addEventListener("submit", function (e) {
+    document.getElementById("formulario").addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const nome = document.getElementById("nome").value.trim();
-      const cota = document.getElementById("cota").value;
-      const horario = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
+      const nome = document.getElementById("nome").value;
+      const tipoCota = document.getElementById("tipoCota").value;
+      const mensagem = document.getElementById("mensagem");
 
-      if (!nome || !cota) {
-        alert("Preencha todos os campos.");
+      if (!nome || !tipoCota) {
+        mensagem.textContent = "❌ Preencha todos os campos!";
+        mensagem.className = "erro";
+        mensagem.style.display = "block";
         return;
       }
 
-      // Enviar para o Google Apps Script
-      fetch("https://script.google.com/macros/s/AKfycbwslCZCUnyBN45XmJF1nTmnb635p5D771PVnTj_nrbObb0eG1zIYWs1xnuFtx-GdyVduw/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `participante=${encodeURIComponent(nome)}&cotas=${encodeURIComponent(cota)}&horario=${encodeURIComponent(horario)}`
-      })
-      .then(res => res.text())
-      .then(msg => {
-        if (msg.includes("Sucesso")) {
-          document.getElementById("mensagem").style.display = "block";
-          document.getElementById("formulario").reset();
+      try {
+        const resposta = await fetch("https://script.google.com/macros/s/AKfycbxnp8oKfdvefAxgK9rN76MLqk9rBcywx8gWHEnT0VyfvQHXRAY7dVydRwBFaNexivFmiA/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ nome, tipoCota })
+        });
+
+        const texto = await resposta.text();
+
+        if (texto.includes("sucesso")) {
+          mensagem.textContent = texto;
+          mensagem.className = "sucesso";
         } else {
-          alert("❌ Erro ao registrar inscrição. Tente novamente mais tarde.\n" + msg);
+          mensagem.textContent = texto;
+          mensagem.className = "erro";
         }
-      })
-      .catch(() => {
-        alert("❌ Falha na conexão. Verifique a internet.");
-      });
+
+        mensagem.style.display = "block";
+        document.getElementById("formulario").reset();
+      } catch (error) {
+        mensagem.textContent = "❌ Falha na conexão. Verifique sua internet.";
+        mensagem.className = "erro";
+        mensagem.style.display = "block";
+      }
     });
   </script>
 </body>
